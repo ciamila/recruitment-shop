@@ -2,10 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Hello in my Store!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <div class="flashbag">
+            {% for label, flashes in app.session.flashbag.all %}
+                {% for flash in flashes %}
+                <div class="flash-{{ label }}">
+                    <div>{{ flash }}</div>
+                </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
