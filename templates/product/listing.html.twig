@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link href="{{ asset('css/listing.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+	Listing of products
+	<div>
+		<div>
+			<div class="name">Name</div>
+			<div class="description">Description</div>
+			<div class="price">Price</div>
+		</div>
+		{% for product in products %}
+			<div>
+				<div class="name">{{ product.name }}</div>
+				<div class="description">{{ product.description }}</div>
+				<div class="price">{{ product.price }} {{ product.currency }}</div>
+			</div>
+		{% endfor %}
+		Pages:
+		{% for i in 1..productsPages %}
+			<a href="{{ path('product_listing', {page:i}) }}">{{ i }}</a>
+		{% endfor %}
+	</div>
+{% endblock %}

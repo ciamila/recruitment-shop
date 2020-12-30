@@ -1,0 +1,14 @@
+.name {
+    width: 30%;
+    display: inline-block;
+}
+
+.description {
+    width: 50%;
+    display: inline-block;
+}
+
+.price {
+    width: 20%;
+    display: inline-block;
+}
